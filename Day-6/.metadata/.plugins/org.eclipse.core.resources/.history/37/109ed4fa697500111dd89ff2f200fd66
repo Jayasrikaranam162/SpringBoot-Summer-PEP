@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>School Portal</title>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+
+body{
+    background:#eef3f9;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    background:linear-gradient(90deg,#0d47a1,#1565c0,#1e88e5);
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 35px;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+}
+
+.header h1{
+    font-size:34px;
+    letter-spacing:1px;
+}
+
+.logo img{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    border:3px solid white;
+    background:white;
+}
+
+/* ================= NAVIGATION ================= */
+
+.navbar{
+
+    background:white;
+
+    padding:15px;
+
+    text-align:center;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+
+}
+
+.navbar a{
+
+    text-decoration:none;
+
+    color:#0d47a1;
+
+    margin:0 20px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.navbar a:hover{
+
+    color:#ff6f00;
+
+}
+
+/* ================= MAIN ================= */
+
+.main{
+
+    display:flex;
+
+    padding:20px;
+
+    gap:20px;
+
+}
+
+/* ================= LEFT MENU ================= */
+
+.menu{
+
+    width:20%;
+
+    background:white;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+    padding:20px;
+
+}
+
+.menu h2{
+
+    text-align:center;
+
+    color:#0d47a1;
+
+    margin-bottom:20px;
+
+}
+
+.menu a{
+
+    display:block;
+
+    text-decoration:none;
+
+    text-align:center;
+
+    background:#1976d2;
+
+    color:white;
+
+    padding:12px;
+
+    margin:15px 0;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.menu a:hover{
+
+    background:#0d47a1;
+
+    transform:translateY(-2px);
+
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+
+    width:60%;
+
+    background:white;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+    padding:30px;
+
+    min-height:450px;
+
+}
+
+.content h2{
+
+    color:#0d47a1;
+
+    border-bottom:2px solid #1976d2;
+
+    padding-bottom:10px;
+
+    margin-bottom:20px;
+
+}
+
+.content p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    margin:15px 0;
+
+}
+
+/* ================= RIGHT PANEL ================= */
+
+.side{
+
+    width:20%;
+
+    background:white;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+    padding:20px;
+
+    text-align:center;
+
+}
+
+.side img{
+
+    width:150px;
+
+    height:150px;
+
+    border-radius:50%;
+
+    border:4px solid #1976d2;
+
+    margin-bottom:20px;
+
+}
+
+.side h3{
+
+    color:#1565c0;
+
+}
+
+.side p{
+
+    margin-top:15px;
+
+    color:#555;
+
+    line-height:1.8;
+
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+
+    margin-top:20px;
+
+    background:#0d47a1;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 30px;
+
+}
+
+.footer a{
+
+    color:white;
+
+    text-decoration:none;
+
+    margin-right:15px;
+
+    font-weight:bold;
+
+}
+
+.footer a:hover{
+
+    color:yellow;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Header -->
+
+<div class="header">
+
+    <h1>🏫 School Portal</h1>
+
+    <div class="logo">
+        <img th:src="@{/images/logo.png}" alt="School Logo">
+    </div>
+
+</div>
+
+<!-- Navigation -->
+
+<div class="navbar">
+
+    <a href="/">
+        <i class="fa-solid fa-house"></i> Home
+    </a>
+
+    <a href="/about">
+        <i class="fa-solid fa-circle-info"></i> About
+    </a>
+
+    <a href="/contact">
+        <i class="fa-solid fa-phone"></i> Contact
+    </a>
+
+    <a href="/student">
+        <i class="fa-solid fa-user-graduate"></i> Student
+    </a>
+
+</div>
+
+<!-- Main Section -->
+
+<div class="main">
+
+    <!-- Left Menu -->
+
+    <div class="menu">
+
+        <h2>Menu</h2>
+
+        <a href="/a">A</a>
+
+        <a href="/b">B</a>
+
+        <a href="/c">C</a>
+
+    </div>
+
+    <!-- Center Content -->
+
+    <div class="content">
+
+        <h2 th:text="${title}">Title</h2>
+
+        <p th:text="${message}"></p>
+
+        <p th:if="${name}">
+            <b>Name :</b>
+            <span th:text="${name}"></span>
+        </p>
+
+        <p th:if="${course}">
+            <b>Course :</b>
+            <span th:text="${course}"></span>
+        </p>
+
+        <p th:if="${semester}">
+            <b>Semester :</b>
+            <span th:text="${semester}"></span>
+        </p>
+
+        <p th:if="${college}">
+            <b>College :</b>
+            <span th:text="${college}"></span>
+        </p>
+
+    </div>
+
+    <!-- Right Side -->
+
+    <div class="side">
+
+        <img th:src="@{/images/logo.png}" alt="Logo">
+
+        <h3>School Portal</h3>
+
+        <p>
+            Excellence in Education
+        </p>
+
+        <hr><br>
+
+        <p>
+            📚 Learn<br><br>
+            🌟 Grow<br><br>
+            🎯 Achieve
+        </p>
+
+    </div>
+
+</div>
+
+<!-- Footer -->
+
+<div class="footer">
+
+    <div>
+
+        <a href="https://www.facebook.com" target="_blank">
+            📘 Facebook
+        </a>
+
+        <a href="https://www.instagram.com" target="_blank">
+            📷 Instagram
+        </a>
+
+        <a href="https://www.linkedin.com" target="_blank">
+            💼 LinkedIn
+        </a>
+
+    </div>
+
+    <div>
+
+        © 2026 School Portal
+
+    </div>
+
+    <div>
+
+        📞 Contact Us : +91 9999999999
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

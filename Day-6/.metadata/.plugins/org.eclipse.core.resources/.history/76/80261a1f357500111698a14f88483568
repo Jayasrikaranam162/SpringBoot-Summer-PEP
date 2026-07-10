@@ -1,0 +1,31 @@
+@Controller
+public class StudentController {
+
+    @GetMapping("/name")
+    public String name(Model model) {
+        model.addAttribute("title", "Student Name");
+        model.addAttribute("message", "Name : Jaya");
+        return "dashboard";
+    }
+
+    @GetMapping("/course")
+    public String course(Model model) {
+        model.addAttribute("title", "Course");
+        model.addAttribute("message", "Course : B.Tech CSE");
+        return "dashboard";
+    }
+
+    @GetMapping("/semester")
+    public String semester(Model model) {
+        model.addAttribute("title", "Semester");
+        model.addAttribute("message", "Semester : 7");
+        return "dashboard";
+    }
+
+    @GetMapping("/college")
+    public String college(Model model) {
+        model.addAttribute("title", "College");
+        model.addAttribute("message", "College : Lovely Professional University");
+        return "dashboard";
+    }
+}

@@ -1,0 +1,6 @@
+package com.example.payment.repository;
+
+
+public class PaymentRepository extends JpaRepository<Payment, Long> {
+
+}

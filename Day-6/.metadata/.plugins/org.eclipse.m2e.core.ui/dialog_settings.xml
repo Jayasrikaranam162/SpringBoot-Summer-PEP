@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\karan\OneDrive\Desktop\Summer PEP\day-6\SchoolDashboard\src\main\resources\static\images"/>
+			<item value="C:\Users\karan\OneDrive\Desktop\Summer PEP\day-6\Hello"/>
+			<item value="C:\Users\karan\OneDrive\Desktop\Summer PEP\day-6\cart-service"/>
+			<item value="C:\Users\karan\OneDrive\Desktop\Summer PEP\day-6\ApiGateway"/>
+			<item value="C:\Users\karan\OneDrive\Desktop\Summer PEP\day-6\single-page-navigation-demo"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>

@@ -1,0 +1,25 @@
+# Ignore Maven build output
+**/target/
+
+# Eclipse / STS
+**/.settings/
+**/.classpath
+**/.project
+
+# VS Code
+**/.vscode/
+
+# IntelliJ
+**/.idea/
+**/*.iml
+
+# Spring Boot
+**/HELP.md
+**/.mvn/wrapper/maven-wrapper.jar
+
+# Logs
+**/*.log
+
+# OS files
+.DS_Store
+Thumbs.db

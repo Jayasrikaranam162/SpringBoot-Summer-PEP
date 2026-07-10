@@ -1,0 +1,9 @@
+<td class="left">
+    <a href="/name">Student Name</a><br><br>
+
+    <a href="/course">Course</a><br><br>
+
+    <a href="/semester">Semester</a><br><br>
+
+    <a href="/college">College</a>
+</td>

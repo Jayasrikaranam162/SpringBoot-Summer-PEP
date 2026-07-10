@@ -1,0 +1,59 @@
+package com.example.demo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class StudentController {
+
+    @GetMapping("/student")
+    public String student(Model model) {
+
+        model.addAttribute("title", "Student Details");
+
+        model.addAttribute("name", "Jaya");
+
+        model.addAttribute("course", "B.Tech Computer Science");
+
+        model.addAttribute("semester", "7th Semester");
+
+        model.addAttribute("college", "Lovely Professional University");
+
+        return "dashboard";
+    }
+
+
+    @GetMapping("/a")
+    public String menuA(Model model) {
+
+        model.addAttribute("title", "Menu A");
+
+        model.addAttribute("message", "This is Menu A.");
+
+        return "dashboard";
+    }
+
+
+    @GetMapping("/b")
+    public String menuB(Model model) {
+
+        model.addAttribute("title", "Menu B");
+
+        model.addAttribute("message", "This is Menu B.");
+
+        return "dashboard";
+    }
+
+
+    @GetMapping("/c")
+    public String menuC(Model model) {
+
+        model.addAttribute("title", "Menu C");
+
+        model.addAttribute("message", "This is Menu C.");
+
+        return "dashboard";
+    }
+
+}

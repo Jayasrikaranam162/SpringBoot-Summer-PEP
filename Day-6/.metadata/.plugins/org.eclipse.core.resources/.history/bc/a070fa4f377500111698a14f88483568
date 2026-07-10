@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>School Dashboard</title>
+
+<style>
+
+table{
+    width:80%;
+    margin:auto;
+    border-collapse:collapse;
+}
+
+table,td{
+    border:1px solid black;
+}
+
+td{
+    padding:10px;
+}
+
+.top{
+    text-align:center;
+}
+
+.left{
+    width:15%;
+    text-align:center;
+}
+
+.middle{
+    width:70%;
+    height:250px;
+    text-align:center;
+}
+
+.right{
+    width:15%;
+    text-align:center;
+}
+
+.footer{
+    text-align:center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2 align="center">School Portal</h2>
+
+<p align="center">
+    <a href="/">Home</a> |
+    <a href="/about">About</a> |
+    <a href="/contact">Contact</a>
+</p>
+
+<table>
+
+<tr>
+
+<td class="left">
+
+<b>Menu</b>
+
+<hr>
+
+<a href="/a">A</a>
+
+<br><br>
+
+<a href="/b">B</a>
+
+<br><br>
+
+<a href="/c">C</a>
+
+</td>
+
+<td class="middle">
+
+<h3 th:text="${title}"></h3>
+
+<p th:text="${message}"></p>
+
+</td>
+
+<td class="right">
+
+<b>Icon</b>
+
+<br><br>
+
+Image
+
+</td>
+
+</tr>
+
+<tr>
+
+<td colspan="2">
+
+Instagram |
+Facebook |
+HDFC
+
+</td>
+
+<td class="footer">
+
+Contact Us
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>

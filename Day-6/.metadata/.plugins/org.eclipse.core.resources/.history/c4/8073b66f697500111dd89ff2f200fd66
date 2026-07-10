@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>School Portal</title>
+
+<style>
+
+	*{
+	    margin:0;
+	    padding:0;
+	    box-sizing:border-box;
+	    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+	}
+
+	body{
+	    background:#edf3f8;
+	}
+
+	/* Header */
+
+	.header{
+	    background:linear-gradient(90deg,#0d47a1,#1976d2,#42a5f5);
+	    color:white;
+	    display:flex;
+	    justify-content:space-between;
+	    align-items:center;
+	    padding:18px 40px;
+	    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+	}
+
+	.header h1{
+	    font-size:34px;
+	    letter-spacing:1px;
+	}
+
+	.logo img{
+	    width:70px;
+	    height:70px;
+	    border-radius:50%;
+	    border:3px solid white;
+	    background:white;
+	}
+
+	/* Navbar */
+
+	.navbar{
+	    background:white;
+	    text-align:center;
+	    padding:15px;
+	    box-shadow:0 2px 8px rgba(0,0,0,.1);
+	}
+
+	.navbar a{
+	    text-decoration:none;
+	    color:#0d47a1;
+	    font-size:18px;
+	    font-weight:bold;
+	    margin:0 25px;
+	    transition:.3s;
+	}
+
+	.navbar a:hover{
+	    color:#e65100;
+	}
+
+	/* Main */
+
+	.main{
+	    display:flex;
+	    gap:20px;
+	    padding:25px;
+	}
+
+	/* Menu */
+
+	.menu{
+	    width:20%;
+	    background:white;
+	    border-radius:15px;
+	    box-shadow:0 5px 15px rgba(0,0,0,.15);
+	    padding:20px;
+	}
+
+	.menu h2{
+	    text-align:center;
+	    color:#0d47a1;
+	    margin-bottom:20px;
+	}
+
+	.menu a{
+	    display:block;
+	    text-decoration:none;
+	    text-align:center;
+	    padding:12px;
+	    margin:15px 0;
+	    background:#1976d2;
+	    color:white;
+	    border-radius:8px;
+	    font-weight:bold;
+	    transition:.3s;
+	}
+
+	.menu a:hover{
+	    background:#0d47a1;
+	    transform:scale(1.05);
+	}
+
+	/* Content */
+
+	.content{
+	    width:60%;
+	    background:white;
+	    border-radius:15px;
+	    box-shadow:0 5px 15px rgba(0,0,0,.15);
+	    padding:35px;
+	    min-height:430px;
+	}
+
+	.content h2{
+	    color:#0d47a1;
+	    margin-bottom:20px;
+	    border-bottom:2px solid #1976d2;
+	    padding-bottom:10px;
+	}
+
+	.content p{
+	    margin:18px 0;
+	    font-size:18px;
+	    line-height:1.6;
+	}
+
+	/* Right Panel */
+
+	.side{
+	    width:20%;
+	    background:white;
+	    border-radius:15px;
+	    box-shadow:0 5px 15px rgba(0,0,0,.15);
+	    text-align:center;
+	    padding:20px;
+	}
+
+	.side img{
+	    width:140px;
+	    height:140px;
+	    border-radius:50%;
+	    margin:20px auto;
+	}
+
+	.side h3{
+	    color:#0d47a1;
+	    margin-top:10px;
+	}
+
+	.side p{
+	    margin-top:15px;
+	    color:#555;
+	}
+
+	/* Footer */
+
+	.footer{
+	    background:#0d47a1;
+	    color:white;
+	    display:flex;
+	    justify-content:space-between;
+	    align-items:center;
+	    padding:18px 35px;
+	    margin-top:20px;
+	}
+
+	.footer a{
+	    color:white;
+	    text-decoration:none;
+	    margin-right:15px;
+	    font-weight:bold;
+	}
+
+	.footer a:hover{
+	    color:#ffd54f;
+	}
+</style>
+
+</head>
+
+<body>
+
+<!-- Header -->
+
+<div class="header">
+
+    <h1>School Portal</h1>
+
+    <div class="logo">
+
+        <!-- Replace logo.png with your own logo later -->
+        <img th:src="@{/images/logo.png}" alt="Logo">
+
+    </div>
+
+</div>
+
+<!-- Navigation -->
+
+<div class="navbar">
+
+    <a href="/">Home</a>
+
+    <a href="/about">About</a>
+
+    <a href="/contact">Contact</a>
+
+    <a href="/student">Student</a>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+    <!-- Left Menu -->
+
+    <div class="menu">
+
+        <h2>Menu</h2>
+
+        <a href="/a">A</a>
+
+        <a href="/b">B</a>
+
+        <a href="/c">C</a>
+
+    </div>
+
+    <!-- Center -->
+
+    <div class="content">
+
+        <h2 th:text="${title}"></h2>
+
+        <p th:text="${message}"></p>
+
+        <p th:if="${name}">
+            <b>Name :</b>
+            <span th:text="${name}"></span>
+        </p>
+
+        <p th:if="${course}">
+            <b>Course :</b>
+            <span th:text="${course}"></span>
+        </p>
+
+        <p th:if="${semester}">
+            <b>Semester :</b>
+            <span th:text="${semester}"></span>
+        </p>
+
+        <p th:if="${college}">
+            <b>College :</b>
+            <span th:text="${college}"></span>
+        </p>
+
+    </div>
+
+    <!-- Right -->
+
+    <div class="side">
+
+        <h2>School</h2>
+
+        <img th:src="@{/images/logo.png}" alt="School Logo">
+
+        <br><br>
+
+        <h3>Excellence in Education</h3>
+
+    </div>
+
+</div>
+
+<!-- Footer -->
+
+<div class="footer">
+
+    <div>
+
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+
+        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+
+    </div>
+
+    <div>
+
+        © 2026 School Portal
+
+    </div>
+
+    <div>
+
+        Contact Us : +91 9999999999
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Maintenance | SAMS</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div th:replace="~{fragments/sidebar :: sidebar}"></div>
+
+<div class="main-content">
+
+    <div th:replace="~{fragments/topbar :: topbar}"></div>
+
+    <div class="section-card">
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                <h4 class="mb-0">Maintenance Requests</h4>
+                <small class="text-muted">Track assets under repair and service lifecycle</small>
+            </div>
+
+            <a href="/ui/maintenance/add" class="btn btn-primary">
+                <i class="bi bi-tools"></i> New Maintenance
+            </a>
+        </div>
+
+        <div class="alert alert-danger" th:if="${errorMessage}" th:text="${errorMessage}"></div>
+
+        <table class="table table-hover align-middle">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Asset</th>
+                <th>Vendor</th>
+                <th>Issue</th>
+                <th>Cost</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Status</th>
+                <th>Remarks</th>
+                <th class="text-end">Actions</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="req : ${requests}">
+                <td th:text="${req.maintenanceId}"></td>
+                <td th:text="${req.asset != null ? req.asset.assetName : 'N/A'}"></td>
+                <td th:text="${req.vendor != null ? req.vendor.vendorName : 'N/A'}"></td>
+                <td th:text="${req.issueDescription}"></td>
+                <td th:text="${req.maintenanceCost}"></td>
+                <td th:text="${req.startDate}"></td>
+                <td th:text="${req.endDate != null ? req.endDate : 'Pending'}"></td>
+
+                <td>
+                    <span th:if="${req.maintenanceStatus == 'IN_PROGRESS'}"
+                          class="status-badge badge-warning"
+                          th:text="${req.maintenanceStatus}">
+                    </span>
+
+                    <span th:if="${req.maintenanceStatus == 'COMPLETED'}"
+                          class="status-badge badge-success"
+                          th:text="${req.maintenanceStatus}">
+                    </span>
+                </td>
+
+                <td th:text="${req.remarks}"></td>
+
+                <td class="text-end">
+                    <a th:if="${req.maintenanceStatus == 'IN_PROGRESS'}"
+                       th:href="@{'/ui/maintenance/complete/' + ${req.maintenanceId}}"
+                       class="btn btn-sm btn-outline-success"
+                       onclick="return confirm('Mark this maintenance as completed?')">
+                        <i class="bi bi-check-circle"></i>
+                    </a>
+
+                    <a th:href="@{'/ui/maintenance/delete/' + ${req.maintenanceId}}"
+                       class="btn btn-sm btn-outline-danger"
+                       onclick="return confirm('Are you sure you want to delete this maintenance record?')">
+                        <i class="bi bi-trash"></i>
+                    </a>
+                </td>
+            </tr>
+
+            <tr th:if="${#lists.isEmpty(requests)}">
+                <td colspan="10" class="text-center text-muted py-4">
+                    No maintenance records found.
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
+
+</div>
+<script th:src="@{/js/common.js}"></script>
+</body>
+</html>
