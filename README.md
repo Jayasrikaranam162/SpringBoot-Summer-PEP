@@ -1,4 +1,4 @@
-﻿# â˜€ï¸ SpringBoot Summer PEP
+﻿#SpringBoot Summer PEP
 
 Welcome to my comprehensive showcase of the **Spring Boot Summer Professional Experience Program (PEP)**! 
 
