@@ -6,7 +6,7 @@ This repository acts as a Master Workspace, hosting all of the daily assignments
 
 ---
 
-## ðŸŒ² Repository Structure
+#Repository Structure
 
 - **Day-1**: Basics of Spring Boot WebMVC.
 - **Day-2**: H2 In-Memory DB, External SQL Connections, and Custom Exceptions.
@@ -21,9 +21,9 @@ This repository acts as a Master Workspace, hosting all of the daily assignments
 - **Day-11**: Distributed transactions using SAGA patterns.
 - **Day-12**: Advanced monitoring (Micrometer Tracing & Zipkin).
 
-### ðŸš€ Capstone Projects
-- **GroupProject-SmartAssetManagementSystem**: A robust, monolithic Spring Boot application designed to manage organizational assets, employees, mapping endpoints with Spring Security and Swagger UI.
-- **Project2-Day3-EmployeeBackendLoginValidation**: An MVC backend with Thymeleaf emphasizing secure login validation and global exception handling routing.
+#Projects
+- GroupProject-SmartAssetManagementSystem: A robust, monolithic Spring Boot application designed to manage organizational assets, employees, mapping endpoints with Spring Security and Swagger UI.
+- Project2-Day3-EmployeeBackendLoginValidation: An MVC backend with Thymeleaf emphasizing secure login validation and global exception handling routing.
 
 ---
-**Author**: Jayasri Karanam
+Author: Karanam Jayasri
